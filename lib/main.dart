@@ -111,8 +111,14 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: const Icon(Icons.auto_fix_high),
               onPressed: () async {
                 //
+                var FirmId = 4;
+                var AgentId = 27;
+              //  await controller.loadRequest(Uri.parse(    'https://bi.wease.io/#/share/58661678655718123427-162426?filters=[{"fieldName":"FirmId","operator":"=","fieldValue": $FirmId}]')); //SALES MANAGER İÇİN  ÇAĞIRILACAK..
 
-                controller.loadRequest(Uri.parse('https://www.facebook.com'));
+                  await controller.loadRequest(Uri.parse('https://bi.wease.io/#/share/58661678655718123427-162426?filters=[{"fieldName":"AgentId","operator":"=","fieldValue":$AgentId},{"fieldName":"FirmId","operator":"=","fieldValue":$FirmId}]'));
+
+                ///---> AGENT İÇİN ÇAĞIRILACAK..
+                await controller.reload();
               },
             )
           ]),
